@@ -38,6 +38,14 @@ def good_tomo(emoji_data):
     new1 = np.clip((reconstruction_fbp)/0.9, 0,1)
     return new1
 
+def no_filter_tomo(emoji_data):
+    image = rgb2gray(rgba2rgb(emoji_data)) # remove alpha channel and convert to gray
+    image = rescale(image, scale=0.5, mode='reflect', channel_axis=None)
+    theta = np.linspace(0., 180., max(image.shape), endpoint=False)
+    sinogram = radon(image, theta=theta)
+    reconstruction_fbp = iradon(sinogram, theta= theta, filter_name= None)
+    new1 = np.clip(reconstruction_fbp*0.001, 0.2,1) # TODO better clipping
+    return new1
 
 def tomo_missing_angle_clip(emoji_data,fromangle,toangle):
     total_angle = 180
@@ -99,8 +107,10 @@ def jedes_5te_Bild(emoji_data):
 
 
 
+
 filter_names = {
     "good_tomo" : good_tomo,
+    "no_filter": no_filter_tomo,
     "nur_2_bilder" : nur_2_bilder,
     "jedes_40ste_Bild" :jedes_40ste_Bild,
     "jedes_10ste_Bild" : jedes_10ste_Bild,
