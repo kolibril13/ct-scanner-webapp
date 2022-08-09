@@ -2,6 +2,9 @@ from re import X
 from PIL import Image
 import sys
 
+import warnings
+warnings.filterwarnings("ignore")
+
 if "pyodide" in sys.modules:
    # running in Pyodide
     from js import document, console, Uint8Array, window, File
@@ -23,7 +26,7 @@ from skimage.color import rgba2rgb,rgb2gray
 from skimage.transform import iradon
 
 current_emoji = "🦴"
-current_filter_name = "good_tomo"
+current_filter_name = "nur_2_bilder"
 
 emoji_data: dict[str, np.array] = {}
 
