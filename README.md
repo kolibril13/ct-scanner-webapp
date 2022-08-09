@@ -4,3 +4,5 @@ Choose an emoji. Choose an CT algorithm. Let the magic happen!
 
 <img width="1546" alt="image" src="https://user-images.githubusercontent.com/44469195/182235742-2a844573-24be-4507-9dbc-fd366852a202.png">
 
+Attribution:
+Emojis designed by [OpenMoji](https://openmoji.org/) – the open-source emoji and icon project.

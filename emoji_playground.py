@@ -94,7 +94,31 @@ def radon180_but_less_images(emoji_data, less = 20):
     return new1
 
 def nur_2_bilder(emoji_data):
-    return (tomo_missing_angle_clip(emoji_data, fromangle= 0,toangle = 2) + tomo_missing_angle_clip(emoji_data, fromangle= 90,toangle = 91))/2
+    return (
+        tomo_missing_angle_clip(emoji_data, fromangle= 0,toangle = 1) + 
+        tomo_missing_angle_clip(emoji_data, fromangle= 90,toangle = 91)
+        )/2
+
+def nur_4_bilder(emoji_data):
+    return (
+        tomo_missing_angle_clip(emoji_data, fromangle= 0,toangle = 1) + 
+        tomo_missing_angle_clip(emoji_data, fromangle= 45,toangle = 46) +
+        tomo_missing_angle_clip(emoji_data, fromangle= 90,toangle = 91) +
+        tomo_missing_angle_clip(emoji_data, fromangle= 135,toangle = 136)
+        )/4
+
+def nur_8_bilder(emoji_data):
+    return (
+        tomo_missing_angle_clip(emoji_data, fromangle= 0,toangle = 1) + 
+        tomo_missing_angle_clip(emoji_data, fromangle= 0+22,toangle = 22+1) + 
+        tomo_missing_angle_clip(emoji_data, fromangle= 45,toangle = 45+1) +
+        tomo_missing_angle_clip(emoji_data, fromangle= 45+22,toangle = 45+22+1) +
+        tomo_missing_angle_clip(emoji_data, fromangle= 90,toangle = 90+1) +
+        tomo_missing_angle_clip(emoji_data, fromangle= 90+22,toangle = 90+22+1) +
+        tomo_missing_angle_clip(emoji_data, fromangle= 135,toangle = 135+1) +
+        tomo_missing_angle_clip(emoji_data, fromangle= 135+22,toangle = 135+22+1)
+        )/8
+
 
 def jedes_40ste_Bild(emoji_data):
     return radon180_but_less_images(emoji_data, less = 40)
@@ -115,9 +139,10 @@ filter_names = {
     "good_tomo" : good_tomo,
     "without_fbp": without_fbp_tomo,
     "nur_2_bilder" : nur_2_bilder,
-    "jedes_40ste_Bild" :jedes_40ste_Bild,
-    "jedes_10ste_Bild" : jedes_10ste_Bild,
+    "nur_4_bilder" :nur_4_bilder,
+    "nur_8_bilder" : nur_8_bilder,
     "jedes_5te_Bild" : jedes_5te_Bild,
+    "jedes_10ste_Bild":jedes_10ste_Bild,
     "m0to10": lambda emoji_data: tomo_missing_angle_cutout(emoji_data, fromangle= 0,toangle = 10),
     "m0to30": lambda emoji_data: tomo_missing_angle_cutout(emoji_data, fromangle= 0,toangle = 30),
     "m30to60": lambda emoji_data: tomo_missing_angle_cutout(emoji_data, fromangle= 30,toangle = 60),
