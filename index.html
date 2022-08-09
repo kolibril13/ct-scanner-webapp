@@ -1,10 +1,10 @@
 <html>
 
 <head>
-    
-    <title>Emoji-Skimage</title>
+
+    <title>CT Scanner</title>
     <link rel="icon" type="image/svg+xml" href="icon_bone.svg">
-      
+
     <!--
     Import tailwind js to dnyamical add styleing to tailwind classes
     "Not the best choice for production" says Tailwind, but will do for now 
@@ -19,11 +19,14 @@
         - scikit-image
         - numpy
     </py-env>
-
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <py-script src="./emoji_playground.py">
     </py-script>
+    <br>
+    <h1 class="font-medium leading-tight text-5xl mt-0 mb-2">Der CT Scanner zum Ausprobieren</h1>
+
     <div class="p-2 bg-green-50 m-8 border-2">
+
         <div class="flex flex-row space-x-12">
             <div class="grid grid-cols-2">
                 <p class="">Wähle ein Emoji:</p>
@@ -33,7 +36,7 @@
                     <option value="🐱">🐱</option>
                     <option value="🦚">🦚</option>
                     <option value="🎭">🎭</option>
-                    
+
                 </select>
             </div>
             <div class="grid grid-cols-2">
@@ -67,6 +70,17 @@
             </div>
         </div>
     </div>
+
+
+    Auf der linken Seite ist ein Original Emoji zu sehen, auf der rechten Seite ein CT Scan vom Emoji.
+    <br>
+    Was passiert, wenn der Scanner nur 2 Bilder, statt allen 309 Bilder aufnimmt?
+    <br>
+    Was passiert, wenn bestimmte Winkel beim Scan verdeckt worden sind, und somit nicht alle Bilder aufgenommen werden
+    konnten?
+    <br>
+    Mit den Scan-Optionen können verschiedene Szenarios ausprobiert werden.
+    <br>
 </body>
 
 </html>
