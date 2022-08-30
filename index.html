@@ -10,7 +10,40 @@
     "Not the best choice for production" says Tailwind, but will do for now 
     -->
     <script src="https://cdn.tailwindcss.com/"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="./drag_drop.css">
+    <style>
+        .external_link_section {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        a:link {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: black;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: grey;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+
+        a:active {
+            color: blue;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,8 +57,13 @@
     </py-env>
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <py-script src="./emoji_playground.py">
-
     </py-script>
+
+    <div class="external_link_section">
+        <a title="Link zum GitHub Projekt" href="https://github.com/kolibril13/ct-scanner-webapp"><i
+                class="fa fa-github" style='font-size:36px;'></i></a>
+    </div>
+
     <br>
     <h1 class="font-medium leading-tight text-5xl mt-0 mb-2">Der CT Scanner zum Ausprobieren</h1>
 
