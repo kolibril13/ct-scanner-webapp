@@ -1,7 +1,7 @@
 # https://kolibril13.github.io/ct-scanner-webapp/
 Eine Anwendung, um mehr über CT-Scanner zu erfahren.
 
-Alte Version vom August 2022.
+Alte Version vom August 2022..
 
 Emoji wählen. CT-Algorithmus aussuchen. Entdecken und verstehen, wie Signale in Bilder übersetzt werden.
 
