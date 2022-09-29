@@ -3,7 +3,7 @@
 
 <head>
   <title>CT Scanner</title>
-  <link rel="icon" type="image/svg+xml" href="icon_bone.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/icon_bone.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
@@ -13,21 +13,6 @@
       border-radius: 152px;
     }
 
-    .whole_page {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-    }
-
-    .centered {
-      display: flex;
-      width: 100vw;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-    }
 
     .external_link_section {
       position: absolute;
@@ -63,12 +48,7 @@
         class="fa fa-github" style='font-size:36px;'></i></a>
   </div>
   <h3>Image</h3>
-  <div class="whole_page">
-    <div class="centered">
-
-      <canvas id="original" width="309" height="309"></canvas>
-    </div>
-  </div>
+  <canvas id="original" width="309" height="309"></canvas>
   <!-- information useful for debugging -->
   <p> Grey value of pixel in center: <span id="original_as_text"></span></p>
   <p>Processing took: <span id="duration"></span>ms</p>
