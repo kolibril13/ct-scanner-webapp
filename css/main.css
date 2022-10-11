@@ -1,0 +1,31 @@
+#original {
+  background: #fff;
+  border: 1px solid blue;
+  border-radius: 152px;
+}
+
+.external_link_section {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+a:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.fa-github {
+  font-size: 36px;
+}
