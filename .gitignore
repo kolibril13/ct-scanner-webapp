@@ -134,3 +134,5 @@ emoji_ct_env
 
 *.DS_Store
 prepros.config
+
+*.map
