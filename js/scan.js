@@ -42,6 +42,8 @@ list_of_projections.push(list_of_projections_all[15]);
 list_of_projections.push(list_of_projections_all[19]);
 
 
+// nice tutorial for numjs https://jsfiddle.net/tgk9j3y8/24/ 
+
 //add elements to final array
 img_final = nj.zeros([309, 309], 'float32');
 for (const element of list_of_projections) {
@@ -70,9 +72,12 @@ document.getElementById("h").textContent = img.shape[0];
 document.getElementById("w").textContent = img.shape[1];
 
 // display current images for debugging
-document.writeln("<p> Images that are currently present:</p>")
+const image_canvas = document.getElementById("images_debugging");
+image_canvas.insertAdjacentHTML("beforeend", "<br>");
+
 list_of_projections.forEach(function (imagei, index) {
-  document.writeln(`<canvas id="canvas${index}"" width="50" height="50"></canvas>`);
+  let new_canvas = `<canvas id="canvas${index}"" width="100" height="100"></canvas>`
+  image_canvas.insertAdjacentHTML("beforeend", new_canvas);
   ximg = nj.array(imagei).add(nj.ones([309, 309])).multiply(90);
   nj.images.save(ximg, document.getElementById(`canvas${index}`));
 }
