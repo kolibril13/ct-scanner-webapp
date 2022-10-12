@@ -1,4 +1,10 @@
 @import "discrete.scss";
+.hidden{
+  display:none;
+}
+#debug{
+  background: lightgray;
+}
 #original {
   position:relative;
   background: black;
