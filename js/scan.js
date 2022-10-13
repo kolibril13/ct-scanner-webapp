@@ -8,13 +8,19 @@ request.send(null);
 let jsonData = JSON.parse(request.responseText);
 
 const list_of_projections_all = [];
-
+var scansize = 0;
 // read image arrays from json
 for (let key of Object.keys(jsonData)) {
   let chapter_of_html = key
   let chapter_content = jsonData[key];
   var img = nj.array(chapter_content, 'float32');
   list_of_projections_all.push(img);
+  if(scansize == 0 || jsonData[key].length == scansize){
+    scansize = jsonData[key].length;
+  }else{
+    console.log("Some Error in the Arrays/JSON.")
+  }
+    
 }
 
 const list_of_projections = [];
@@ -34,7 +40,7 @@ function createprojectionimg(clickboxid,remove = false){
   }
 
   //add elements to final array
-  img_final = nj.zeros([309, 309], 'float32');
+  img_final = nj.zeros([scansize, scansize], 'float32');
   for (const element of list_of_projections) {
    
     img_final = img_final.add(element);
@@ -43,7 +49,7 @@ function createprojectionimg(clickboxid,remove = false){
   //normalize image
   img_final = img_final.multiply(1 / list_of_projections.length);
   //shift image grey values
-  offset = nj.ones([309, 309]);
+  offset = nj.ones([scansize, scansize]);
   // offset = offset.multiply(1.2);      
   img_final = img_final.add(offset); 
 
@@ -68,7 +74,7 @@ function createprojectionimg(clickboxid,remove = false){
   list_of_projections.forEach(function (imagei, index) {
     let new_canvas = `<canvas id="canvas${index}"" width="100" height="100"></canvas>`
     image_canvas.insertAdjacentHTML("beforeend", new_canvas);
-    ximg = nj.array(imagei).add(nj.ones([309, 309])).multiply(200); 
+    ximg = nj.array(imagei).add(nj.ones([scansize, scansize])).multiply(200); 
     nj.images.save(ximg, document.getElementById(`canvas${index}`));
   });
 }

@@ -1,4 +1,4 @@
-$widget-diameter: 380px;
+$widget-diameter: 420px;
 
 #circlecontainer{
     width:$widget-diameter;
@@ -34,7 +34,7 @@ $widget-diameter: 380px;
 
     @for $i from 1 through $n {
         .clickboxcontainer:nth-child(#{$i}) {
-            transform: rotate(9deg * ($i - 2))
+            transform: rotate(9deg * ($i - 12))
             
         }
     }
