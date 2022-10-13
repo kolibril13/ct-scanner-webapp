@@ -1,17 +1,26 @@
 let request = new XMLHttpRequest();
-request.open("GET", "legs_discrete.json", false);
-// request.open("GET", "legs_continuous.json", false);
+// request.open("GET", "legs_discrete.json", false);
+request.open("GET", "legs_continuous.json", false);
 
 request.send(null);
 let jsonData = JSON.parse(request.responseText);
 
+let dict_parameter_for_display =  jsonData["parameter_for_display"]
+let zoom_factor = dict_parameter_for_display["zoom"]
+let canvas_size = dict_parameter_for_display["canvas_size"]
+let dict_image_arrays = jsonData["imgs"]
+
+//for debugging
+document.writeln(zoom_factor)
+document.writeln(canvas_size)
+
 const list_of_projections_all = [];
 
 // read image arrays from json
-for (let key of Object.keys(jsonData)) {
-  let chapter_of_html = key
-  let chapter_content = jsonData[key];
-  var img = nj.array(chapter_content, 'float32');
+for (let key of Object.keys(dict_image_arrays)) {
+  let array_name = key
+  let array_content = dict_image_arrays[key];
+  var img = nj.array(array_content, 'float32');
   list_of_projections_all.push(img);
 }
 
@@ -23,17 +32,17 @@ const list_of_projections = [];
 list_of_projections.push(list_of_projections_all[0]);
 list_of_projections.push(list_of_projections_all[1]);
 list_of_projections.push(list_of_projections_all[2]);
-list_of_projections.push(list_of_projections_all[3]);
-list_of_projections.push(list_of_projections_all[4]);
-list_of_projections.push(list_of_projections_all[5]);
-list_of_projections.push(list_of_projections_all[6]);
-list_of_projections.push(list_of_projections_all[7]);
-list_of_projections.push(list_of_projections_all[8]);
-list_of_projections.push(list_of_projections_all[9]);
-list_of_projections.push(list_of_projections_all[10]);
+// list_of_projections.push(list_of_projections_all[3]);
+// list_of_projections.push(list_of_projections_all[4]);
+// list_of_projections.push(list_of_projections_all[5]);
+// list_of_projections.push(list_of_projections_all[6]);
+// list_of_projections.push(list_of_projections_all[7]);
+// list_of_projections.push(list_of_projections_all[8]);
+// list_of_projections.push(list_of_projections_all[9]);
+// list_of_projections.push(list_of_projections_all[10]);
 list_of_projections.push(list_of_projections_all[11]);
 list_of_projections.push(list_of_projections_all[12]);
-// list_of_projections.push(list_of_projections_all[13]);
+list_of_projections.push(list_of_projections_all[13]);
 list_of_projections.push(list_of_projections_all[14]);
 list_of_projections.push(list_of_projections_all[15]);
 list_of_projections.push(list_of_projections_all[16]);
