@@ -1,6 +1,6 @@
 let request = new XMLHttpRequest();
 // request.open("GET", "legs_discrete.json", false);
-request.open("GET", "legs_continuous.json", false);
+request.open("GET", "ct_slice_1542_head_continuous.json", false);
 
 request.send(null);
 let jsonData = JSON.parse(request.responseText);
