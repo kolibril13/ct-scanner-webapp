@@ -1,8 +1,6 @@
  //tutorial for numjs https://jsfiddle.net/tgk9j3y8/24/ 
 
 let request = new XMLHttpRequest();
-// request.open("GET", "tooth_discrete.json", false);
-// request.open("GET", "tooth_continuous.json", false);
 request.open("GET", "legs_discrete.json", false);
 // request.open("GET", "legs_continuous.json", false);
 
