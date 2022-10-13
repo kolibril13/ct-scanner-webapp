@@ -214,7 +214,7 @@
   position: relative;
   background: black;
   border: 1px solid black;
-  border-radius: 180px;
+  border-radius: 152px;
 }
 
 .question {
@@ -271,5 +271,3 @@ a:hover {
 .fa-github {
   font-size: 36px;
 }
-
-/*# sourceMappingURL=main.css.map */
