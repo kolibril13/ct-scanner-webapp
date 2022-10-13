@@ -10,6 +10,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0 auto;
 }
 #circlecontainer .clickboxcontainer {
   position: absolute;
@@ -214,6 +215,35 @@
   background: black;
   border: 1px solid black;
   border-radius: 152px;
+}
+
+.question {
+  text-align: center;
+}
+
+.hint {
+  max-width: 400px;
+  background: rgb(252, 242, 112);
+  border: 1px solid black;
+  margin: 10px auto;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.answers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.answers img {
+  max-width: 100px;
+  cursor: pointer;
 }
 
 .external_link_section {

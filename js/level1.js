@@ -19,3 +19,20 @@ for(i=0; i<40; i++){
     })
 }
 
+function answer(e){
+    var activeboxes = document.querySelectorAll(".clickbox.active");
+    if (activeboxes.length < 4){
+        document.getElementById("hint").classList.remove("hidden")
+        return;
+    }else{
+        document.getElementById("hint").classList.add("hidden")
+    }
+    if(e.target.getAttribute("data")=="1"){
+        document.getElementById("solution").classList.remove("hidden")
+        document.getElementById("wrong").classList.add("hidden")
+        document.getElementById("solution").querySelector("span").innerHTML = activeboxes.length / 2;
+    }else{
+        document.getElementById("wrong").classList.remove("hidden")
+    }
+}
+

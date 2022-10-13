@@ -18,8 +18,25 @@
     </div>
     <div id="circlecontainer">
       <canvas id="original" width="309" height="309"></canvas>
-      
     </div>
+    <div class="question">
+      <h2>Frage: Welches Objekt verbirgt sich hier?</h2>
+      <div class="answers">
+        <img id="answerone" data="0" src="assets/tooth.png" onclick="answer(event)">
+        <img id="answertwo" data="1" src="assets/bone.png" onclick="answer(event)">
+        <img id="answerthree" data="0" src="assets/hand.png" onclick="answer(event)">
+      </div>
+      <div id="solution" class="hint hidden">
+        <p>Super! das richtige Objekt wurde mit nur <span>x</span> Winkeln gefunden!</p>
+      </div>
+      <div id="wrong" class="hint hidden">
+        <p>Das ist leider nicht richtig. Verwende weitere Winkel!</p>
+      </div>
+      <div id="hint" class="hint hidden">
+        <p>Achtung: Wähle mindestens 2 Winkel aus, bevor du das Quizz beantwortest.</p>
+      </div>
+    </div>
+    
     
     <div id="debug">
       <!-- information useful for debugging -->
