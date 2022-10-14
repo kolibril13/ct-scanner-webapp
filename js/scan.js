@@ -63,6 +63,8 @@ function createprojectionimg(clickboxid,remove = false){
   img_final = img_final.multiply(70);
   // place images in website
   nj.images.save(img_final, document.getElementById('original'));
+  //evaluate benchmark timer
+  duration = new Date().valueOf() - start;
 
   // display information for debugging
   document.getElementById('duration').textContent = '' + duration;
