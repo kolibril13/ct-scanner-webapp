@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>CT Scanner</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon_bone.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    <div class="external_link_section">
+      <a title="Link zum GitHub Projekt" href="https://github.com/kolibril13/ct-scanner-webapp" target="_blank">
+        <i class="fa fa-github"></i>
+      </a>
+    </div>
+    <div id="circlecontainer">
+      <canvas id="original" width="360" height="360"></canvas>
+    </div>
+    <div class="question">
+      <h2>Frage: Welches Objekt verbirgt sich hier?</h2>
+      <div class="answers">
+        <img id="answerone" data="0" src="assets/tooth.png" onclick="answer(event)">
+        <img id="answertwo" data="1" src="assets/bone.png" onclick="answer(event)">
+        <img id="answerthree" data="0" src="assets/hand.png" onclick="answer(event)">
+      </div>
+      <div id="solution" class="hint hidden">
+        <p>Super! das richtige Objekt wurde mit nur <span>x</span> Winkeln gefunden!</p>
+      </div>
+      <div id="wrong" class="hint hidden">
+        <p>Das ist leider nicht richtig. Verwende weitere Winkel!</p>
+      </div>
+      <div id="hint" class="hint hidden">
+        <p>Achtung: Wähle mindestens 2 Winkel aus, bevor du das Quizz beantwortest.</p>
+      </div>
+    </div>
+    
+    
+    <div id="debug">
+      <!-- information useful for debugging -->
+      <p>Grey value of pixel in center: <span id="original_as_text"></span></p>
+      <p>Processing took: <span id="duration"></span>ms</p>
+      <p>Number of current projections: <span id="number_of_projections"></span> out of 20</p>
+      <p>Dimensions: <span id="h">h</span>, <span id="w">w</span> </p>
+      <div id="images_debugging">Images that are currently present:</div>
+    </div>
+    
+  </body>
+
+  <script src="js/scan.js"></script>
+  <script src="js/level1.js"></script>
+</html>
