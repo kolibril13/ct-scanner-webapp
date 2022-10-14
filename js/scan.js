@@ -1,19 +1,30 @@
  //tutorial for numjs https://jsfiddle.net/tgk9j3y8/24/ 
 
 let request = new XMLHttpRequest();
-request.open("GET", "legs_discrete.json", false);
-// request.open("GET", "legs_continuous.json", false);
+// request.open("GET", "legs_discrete.json", false);
+request.open("GET", "ct_slice_730_upper_legs_continuous.json", false);
+// request.open("GET", "ct_slice_1342r_breast_continuous.json", false);
+// request.open("GET", "ct_slice_1542_teeth_continuous.json", false);
 
 request.send(null);
 let jsonData = JSON.parse(request.responseText);
 
+let dict_parameter_for_display =  jsonData["parameter_for_display"]
+let zoom_factor = dict_parameter_for_display["zoom"]
+let canvas_size = dict_parameter_for_display["canvas_size"]
+let dict_image_arrays = jsonData["imgs"]
+
+//for debugging
+document.writeln(zoom_factor)
+document.writeln(canvas_size)
+
 const list_of_projections_all = [];
 var scansize = 0;
 // read image arrays from json
-for (let key of Object.keys(jsonData)) {
-  let chapter_of_html = key
-  let chapter_content = jsonData[key];
-  var img = nj.array(chapter_content, 'float32');
+for (let key of Object.keys(dict_image_arrays)) {
+  let array_name = key
+  let array_content = dict_image_arrays[key];
+  var img = nj.array(array_content, 'float32');
   list_of_projections_all.push(img);
   if(scansize == 0 || jsonData[key].length == scansize){
     scansize = jsonData[key].length;
