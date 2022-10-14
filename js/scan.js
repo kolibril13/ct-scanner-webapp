@@ -1,6 +1,8 @@
 let request = new XMLHttpRequest();
 // request.open("GET", "legs_discrete.json", false);
-request.open("GET", "ct_slice_1542_head_continuous.json", false);
+request.open("GET", "ct_slice_730_upper_legs_continuous.json", false);
+// request.open("GET", "ct_slice_1342r_breast_continuous.json", false);
+// request.open("GET", "ct_slice_1542_teeth_continuous.json", false);
 
 request.send(null);
 let jsonData = JSON.parse(request.responseText);
@@ -32,11 +34,11 @@ const list_of_projections = [];
 list_of_projections.push(list_of_projections_all[0]);
 list_of_projections.push(list_of_projections_all[1]);
 list_of_projections.push(list_of_projections_all[2]);
-// list_of_projections.push(list_of_projections_all[3]);
-// list_of_projections.push(list_of_projections_all[4]);
-// list_of_projections.push(list_of_projections_all[5]);
-// list_of_projections.push(list_of_projections_all[6]);
-// list_of_projections.push(list_of_projections_all[7]);
+list_of_projections.push(list_of_projections_all[3]);
+list_of_projections.push(list_of_projections_all[4]);
+list_of_projections.push(list_of_projections_all[5]);
+list_of_projections.push(list_of_projections_all[6]);
+list_of_projections.push(list_of_projections_all[7]);
 // list_of_projections.push(list_of_projections_all[8]);
 // list_of_projections.push(list_of_projections_all[9]);
 // list_of_projections.push(list_of_projections_all[10]);
