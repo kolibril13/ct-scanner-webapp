@@ -1,31 +1,59 @@
+@import "discrete.scss";
+.hidden{
+  display:none;
+}
+#debug{
+  background: lightgray;
+}
 #original {
-    background: #fff;
-    border: 1px solid black;
-    border-radius: 180px;
+  position:relative;
+  background: black;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+.question{
+ text-align: center;
+}
+.hint{
+  max-width:400px;
+  background: rgb(252, 242, 112);
+  border: 1px solid black;
+  margin: 10px auto;
+  font-size: 20px;
+  padding: 10px;
+}
+.answers{
+  display:flex;
+  justify-content: center;;
+  align-items: center;
+  img{
+    max-width: 100px;
+    cursor:pointer;
   }
-  .external_link_section {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-  }
-  a{
-    &:visited {
-        color: black;
-        background-color: transparent;
-        text-decoration: none;
-      }
-      &:link {
-        color: black;
-        background-color: transparent;
-        text-decoration: none;
-      }
-      &:hover {
-        color: grey;
-        background-color: transparent;
-        text-decoration: underline;
-      }
-  }
+}
+.external_link_section {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+a{
+  &:visited {
+      color: black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    &:link {
+      color: black;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    &:hover {
+      color: grey;
+      background-color: transparent;
+      text-decoration: underline;
+    }
+}
 .fa-github{
-   font-size:36px;
+  font-size:36px;
 }
   
