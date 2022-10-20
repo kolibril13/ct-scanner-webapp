@@ -16,24 +16,37 @@
         <i class="fa fa-github"></i>
       </a>
     </div>
-    <div id="circlecontainer">
-      <canvas id="original" width="360" height="360"></canvas>
+
+    <div id="level1">
+      <div id="circlecontainer">
+        <canvas id="scanlevel1" width="360" height="360"></canvas>
+      </div>
+      <div class="question">
+        <h2>Frage: Welches Objekt verbirgt sich hier?</h2>
+        <div class="answers">
+          <img id="answerone" data="0" src="assets/tooth.png" onclick="answer(event)">
+          <img id="answertwo" data="1" src="assets/bone.png" onclick="answer(event)">
+          <img id="answerthree" data="0" src="assets/hand.png" onclick="answer(event)">
+        </div>
+        <div id="solution" class="hint hidden">
+          <p>Super! das richtige Objekt wurde mit nur <span>x</span> Winkeln gefunden!</p>
+        </div>
+        <div id="wrong" class="hint hidden">
+          <p>Das ist leider nicht richtig. Verwende weitere Winkel!</p>
+        </div>
+        <div id="hint" class="hint hidden">
+          <p>Achtung: Wähle mindestens 2 Winkel aus, bevor du das Quizz beantwortest.</p>
+        </div>
+      </div>
     </div>
-    <div class="question">
-      <h2>Frage: Welches Objekt verbirgt sich hier?</h2>
-      <div class="answers">
-        <img id="answerone" data="0" src="assets/tooth.png" onclick="answer(event)">
-        <img id="answertwo" data="1" src="assets/bone.png" onclick="answer(event)">
-        <img id="answerthree" data="0" src="assets/hand.png" onclick="answer(event)">
-      </div>
-      <div id="solution" class="hint hidden">
-        <p>Super! das richtige Objekt wurde mit nur <span>x</span> Winkeln gefunden!</p>
-      </div>
-      <div id="wrong" class="hint hidden">
-        <p>Das ist leider nicht richtig. Verwende weitere Winkel!</p>
-      </div>
-      <div id="hint" class="hint hidden">
-        <p>Achtung: Wähle mindestens 2 Winkel aus, bevor du das Quizz beantwortest.</p>
+
+    <div id="level2">
+      <div id="canvascontainer">
+        <svg id="outercircle" width="520" height="520" viewbox="0 0 530 530" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="circles" transform="translate(20,20) rotate(-9 240 240)" stroke="#000" stroke-width="2"></g>
+          <g id="segments" transform="translate(20,20) rotate(-9 240 240)" stroke="#000" stroke-width="2"></g>
+        </svg>
+        <canvas id="scanlevel2" width="360" height="360"></canvas>
       </div>
     </div>
     
@@ -51,4 +64,5 @@
 
   <script src="js/scan.js"></script>
   <script src="js/level1.js"></script>
+  <script src="js/level2.js"></script>
 </html>

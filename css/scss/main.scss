@@ -1,11 +1,12 @@
 @import "discrete.scss";
+@import "continous.scss";
 .hidden{
   display:none;
 }
 #debug{
   background: lightgray;
 }
-#original {
+#scanlevel1,#scanlevel2 { 
   position:relative;
   background: black;
   border: 1px solid black;

@@ -1,0 +1,32 @@
+#level2{
+    #canvascontainer{
+        position:relative;
+        height: 500px;
+        #outercircle,#scanlevel2{
+            position:absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            .circlepart{
+                cursor:pointer;
+                &:hover{
+                    background-color:green;
+                }
+            }
+            #segments, #segments path{
+                pointer-events: none;
+            }
+        }
+        
+    } 
+    
+
+
+
+    #scanlevel2{
+        top: Calc(50% - 5px) !important;
+        left: Calc(50% - 5px) !important;
+        border: 35px solid rgb(247, 247, 247);
+
+    }
+}
