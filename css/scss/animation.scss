@@ -1,0 +1,80 @@
+
+@keyframes flowout { 
+    100% {
+        height: 620px;
+    }
+}
+
+@keyframes flowin { 
+    0% {
+        height: 620px;
+    }
+    100% {
+        height: 580px !important;
+    }
+}
+
+@keyframes show { 
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hide { 
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.show {
+    animation-name: show;
+    animation-duration: 4s;
+}
+
+.hide {
+    animation-name: hide;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+.flowout {
+    animation-name: flowout;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+.flowin{
+    animation-name: flowin;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+#startanimation{
+    border:1px solid black;
+    padding: 10px;
+    background: lightgray;
+    cursor:pointer;
+    width: 100px;
+}
+
+.additional{
+    height: 620px !important;
+}
+
+
+
+$n: 82;
+
+@for $i from 41 through $n {
+    .clickboxcontainer:nth-child(#{$i}) {
+        transform: rotate(4.5deg + (9deg * $i));
+        
+    }
+}
+

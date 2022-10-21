@@ -1,5 +1,19 @@
 @import "discrete.scss";
 @import "continous.scss";
+@import "animation.scss";
+ 
+#level1,#level2{
+  position:absolute;
+  left:50%;
+  transform:translate(-50%,0);
+  width: 500px;
+  height:500px;
+  margin-top: 100px;
+}
+#level1{
+  padding: 30px 20px 10px 10px;
+
+}
 .hidden{
   display:none;
 }

@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <div id="level2">
+    <div id="level2" class="hidden">
       <div id="canvascontainer">
         <svg id="outercircle" width="520" height="520" viewbox="0 0 530 530" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <g id="circles" transform="translate(20,20) rotate(-9 240 240)" stroke="#000" stroke-width="2"></g>
@@ -52,6 +52,7 @@
     
     
     <div id="debug">
+      <div id="startanimation">Start animation</div>
       <!-- information useful for debugging -->
       <p>Grey value of pixel in center: <span id="original_as_text"></span></p>
       <p>Processing took: <span id="duration"></span>ms</p>
@@ -65,4 +66,5 @@
   <script src="js/scan.js"></script>
   <script src="js/level1.js"></script>
   <script src="js/level2.js"></script>
+  <script src="js/animation.js"></script>
 </html>
