@@ -4,7 +4,7 @@ function addmoreboxes(){
     var circlecontainer = document.getElementById("circlecontainer");
     for(i=0; i<40; i++){
         var clickboxcontainer = document.createElement("div");
-        clickboxcontainer.classList.add("clickboxcontainer","additional")
+        clickboxcontainer.classList.add("clickboxcontainer","additional","new")
         var clickbox = document.createElement("div");
         clickbox.classList.add("clickbox")
         clickbox.id = i;
@@ -32,6 +32,16 @@ function transition(){
         document.getElementById("level1").classList.remove("hide");
         document.getElementById("level2").classList.remove("show");
         
+        //reset lvl 1
+        for(i=0; i < boxes.length; i++){
+        
+            if(boxes[i].classList.contains("new")){
+                boxes[i].remove();
+                i = i-1;
+            }else{
+                boxes[i].classList.remove("flowin")
+            }
+        } 
     }, 4000)
 }
 
