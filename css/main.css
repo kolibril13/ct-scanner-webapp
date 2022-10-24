@@ -222,16 +222,43 @@
 #level2 #canvascontainer #outercircle #segments, #level2 #canvascontainer #outercircle #segments path, #level2 #canvascontainer #scanlevel2 #segments, #level2 #canvascontainer #scanlevel2 #segments path {
   pointer-events: none;
 }
-#level2 #circle .halfone, #level2 #circle .halftwo {
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
+#level2 #scanarea img {
+  position: relative;
+  width: 400px;
+  z-index: 100;
+  margin-top: 20px;
 }
-#level2 #circle .halfone {
-  border-left: 5px solid black;
+#level2 #scanarea #circle {
+  position: relative;
+  top: -160px;
+  left: 150px;
 }
-#level2 #circle .halftwo {
-  border-right: 5px solid black;
+#level2 #scanarea #circle .halfone, #level2 #scanarea #circle .halftwo {
+  position: absolute;
+  top: 0;
+  border: 10px solid black;
+  width: 150px;
+  height: 75px;
+  border-bottom: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top-left-radius: 175px;
+  border-top-right-radius: 175px;
+}
+#level2 #scanarea #circle .halfone {
+  -webkit-transform: rotate(90deg) rotate3d(1, 0, 0, 13deg);
+          transform: rotate(90deg) rotate3d(1, 0, 0, 13deg);
+  left: 85px;
+  z-index: 150;
+}
+#level2 #scanarea #circle .halftwo {
+  -webkit-transform: rotate(-90deg) rotate3d(1, 0, 0, -13deg);
+          transform: rotate(-90deg) rotate3d(1, 0, 0, -13deg);
+  z-index: 50;
+}
+#level2 #scanposition {
+  margin-top: 20px;
+  width: 400px;
 }
 #level2 #scanlevel2 {
   top: calc(50% - 5px) !important;

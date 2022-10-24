@@ -62,5 +62,15 @@ for(i=0; i<40;i++){
     g.appendChild(circlepart)
 }
 
+//slider and circle
+document.getElementById("scanposition").addEventListener("input",() => {
+    var circle = document.getElementById("circle");
+    var slider = document.getElementById("scanposition");
+    var left = (slider.value * 375 / 1734) - 50;
+    var top =  - (slider.value * 130 / 1734) - 90;
+    circle.style.left = left + "px";
+    circle.style.top = top + "px";
+})
+
 
 
