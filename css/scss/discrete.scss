@@ -1,42 +1,45 @@
 $widget-diameter: 420px;
 
-#circlecontainer{
-    width:$widget-diameter;
-    height:$widget-diameter;
-    display:flex;
-    justify-content: center;
-    align-items: center;  
-    margin:0 auto;
-    .clickboxcontainer{
-        position:absolute;
+#level1{
+   
+    #circlecontainer{
         width:$widget-diameter;
         height:$widget-diameter;
         display:flex;
         justify-content: center;
-    
-        pointer-events:none;
-        .clickbox{
+        align-items: center;  
+        margin:0 auto;
+        .clickboxcontainer{
             position:absolute;
-            width:20px;
-            height:20px;
-            background:rgb(48, 220, 243);
-            border: 2px solid rgb(87, 87, 87);
-            cursor: pointer;
-            z-index:100;
-            pointer-events: auto;
-            
-            &.active{
-                background:rgb(173, 33, 185);
+            width:$widget-diameter;
+            height:$widget-diameter;
+            display:flex;
+            justify-content: center;
+        
+            pointer-events:none;
+            .clickbox{
+                position:absolute;
+                width:20px;
+                height:20px;
+                background:rgb(48, 220, 243);
+                border: 2px solid rgb(87, 87, 87);
+                cursor: pointer;
+                z-index:100;
+                pointer-events: auto;
+                
+                &.active{
+                    background:rgb(173, 33, 185);
+                }
             }
         }
-    }
-    $n: 41;
-
-    @for $i from 1 through $n {
-        .clickboxcontainer:nth-child(#{$i}) {
-            transform: rotate(9deg * ($i - 12))
-            
-        }
-    }
+        $n: 41;
     
+        @for $i from 1 through $n {
+            .clickboxcontainer:nth-child(#{$i}) {
+                transform: rotate(9deg * ($i - 12))
+                
+            }
+        }
+        
+    }
 }
