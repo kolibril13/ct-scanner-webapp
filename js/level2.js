@@ -42,9 +42,11 @@ for(i=0; i<40;i++){
         //set color
         if(e.target.getAttribute("fill") != "rgb(173, 33, 185)"){
             e.target.setAttributeNS(null, "fill","rgb(173, 33, 185)");
+            e.target.classList.add("active");
             oppositecirclepart.setAttributeNS(null, "fill","rgb(173, 33, 185)");            
         }else{
             e.target.setAttributeNS(null, "fill","rgb(48, 220, 243)");
+            e.target.classList.remove("active");
             oppositecirclepart.setAttributeNS(null, "fill","rgb(48, 220, 243)"); 
         }
 
@@ -63,14 +65,44 @@ for(i=0; i<40;i++){
 }
 
 //slider and circle
-document.getElementById("scanposition").addEventListener("input",() => {
+//set position
+function setcircleposition(){
     var circle = document.getElementById("circle");
     var slider = document.getElementById("scanposition");
-    var left = (slider.value * 375 / 1734) - 50;
+    var left = (slider.value * 375 / 1734) - 55;
     var top =  - (slider.value * 130 / 1734) - 90;
     circle.style.left = left + "px";
     circle.style.top = top + "px";
-})
+}
+//initial position (may cached wrong)
+setcircleposition()
+//eventlistener
+document.getElementById("scanposition").addEventListener("input",setcircleposition)
 
+function checkarea(){
+    var activeboxes = document.querySelectorAll(".circlepart.active")
+    var wrong = document.getElementById("wronglvl2")
+    var hint = document.getElementById("hintlvl2")
+    var solution = document.getElementById("solutionlvl2")
+  
+    //not enough angles
+    if(activeboxes.length < 2){
+        hint.classList.remove("hidden")
+        wrong.classList.add("hidden")
+        solution.classList.add("hidden")
+    }
+    //solution right
+    else if(document.getElementById("scanposition").value < 780 && document.getElementById("scanposition").value > 680){
+        hint.classList.add("hidden")
+        wrong.classList.add("hidden")
+        solution.classList.remove("hidden")
 
+    }
+    //solution wrong
+    else{
+        hint.classList.add("hidden")
+        wrong.classList.remove("hidden")
+        solution.classList.add("hidden")
+    }
+}
 

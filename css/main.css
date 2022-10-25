@@ -216,9 +216,6 @@
 #level2 #canvascontainer #outercircle .circlepart, #level2 #canvascontainer #scanlevel2 .circlepart {
   cursor: pointer;
 }
-#level2 #canvascontainer #outercircle .circlepart:hover, #level2 #canvascontainer #scanlevel2 .circlepart:hover {
-  background-color: green;
-}
 #level2 #canvascontainer #outercircle #segments, #level2 #canvascontainer #outercircle #segments path, #level2 #canvascontainer #scanlevel2 #segments, #level2 #canvascontainer #scanlevel2 #segments path {
   pointer-events: none;
 }
@@ -258,7 +255,18 @@
 }
 #level2 #scanposition {
   margin-top: 20px;
+  margin-bottom: 20px;
   width: 400px;
+}
+#level2 #lockanswer {
+  padding: 10px;
+  background: rgb(48, 220, 243);
+  border: 1px solid rgb(87, 87, 87);
+  color: black;
+  font-size: 16px;
+  width: 150px;
+  margin: 0 auto;
+  cursor: pointer;
 }
 #level2 #scanlevel2 {
   top: calc(50% - 5px) !important;

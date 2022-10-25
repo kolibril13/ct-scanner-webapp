@@ -49,7 +49,7 @@
         <canvas id="scanlevel2" width="360" height="360"></canvas>
       </div>
       <div class="question">
-        <h2>Frage: Vov welcher Ebene stammt der Scan?</h2>
+        <h2>Frage: Von welcher Ebene stammt der Scan?</h2>
         <div id="scanarea">
           <img src="assets/human_real.png">
           <div id="circle">
@@ -58,6 +58,16 @@
           </div>
         </div>
         <input type="range" min="1" max="1734" value="860" class="slider" id="scanposition">
+        <div id="lockanswer" onclick="checkarea()">Bereich prüfen</div>
+          <div id="solutionlvl2" class="hint hidden">
+            <p>Super! Du hast die richtige Stelle mit nur <span>x</span> Winkeln gefunden!</p>
+          </div>
+          <div id="wronglvl2" class="hint hidden">
+            <p>Das ist leider nicht richtig. Verwende weitere Winkel!</p>
+          </div>
+          <div id="hintlvl2" class="hint hidden">
+            <p>Achtung: Wähle mindestens 2 Winkel aus, bevor du das Quizz beantwortest.</p>
+          </div>
       </div>
     </div>
     
