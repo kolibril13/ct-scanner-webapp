@@ -1,3 +1,8 @@
+//lists
+var shownprojectionslvl1 = [];
+var preparedprojectionslvl1 = prepareProjections("legs_discrete.json");
+
+//discrete boxes level 1
 var circlecontainer = document.getElementById("circlecontainer");
 for(i=0; i<40; i++){
     var clickboxcontainer = document.createElement("div");
@@ -10,8 +15,13 @@ for(i=0; i<40; i++){
     clickbox.addEventListener("click",(e) => {
         
         var picturetoadd = Math.abs(parseInt(e.target.id))
-        createprojectionimg(picturetoadd,e.target.classList.contains("active"))
-        
+        createprojectionimg(
+            "scanlevel1",
+            picturetoadd,
+            e.target.classList.contains("active"), 
+            shownprojectionslvl1, 
+            preparedprojectionslvl1
+        );
         e.target.classList.toggle("active")
         var oppositeid = (parseInt(e.target.id) + 20) % 40
         document.getElementById(oppositeid).classList.toggle("active")
@@ -21,6 +31,7 @@ for(i=0; i<40; i++){
 
 function answer(e){
     var activeboxes = document.querySelectorAll(".clickbox.active");
+    window.scrollTo(0,window.innerHeight);
     if (activeboxes.length < 4){
         document.getElementById("hint").classList.remove("hidden")
         return;
@@ -31,6 +42,7 @@ function answer(e){
         document.getElementById("solution").classList.remove("hidden")
         document.getElementById("wrong").classList.add("hidden")
         document.getElementById("solution").querySelector("span").innerHTML = activeboxes.length / 2;
+        setTimeout(startanimation, 2000);
     }else{
         document.getElementById("wrong").classList.remove("hidden")
     }

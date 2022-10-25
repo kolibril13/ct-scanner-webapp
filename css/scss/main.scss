@@ -1,11 +1,60 @@
 @import "discrete.scss";
+@import "continous.scss";
+@import "animation.scss";
+
+#headline{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#helpbutton{
+  cursor:pointer;
+}
+#menubutton{
+  font-size: 35px;
+  cursor:pointer;
+  float:right;
+  padding:5px 10px;
+}
+.menu,#helpoverlay{
+  position:absolute;
+  background:rgba(0, 0, 0, 0.884);
+  color:white;
+  padding: 20px;
+  top: 0;
+  left:0;
+  width: Calc(100% - 40px);
+  z-index:99999;
+  .menuitem{
+    cursor:pointer;
+    margin-bottom: 10px;
+    font-size: 18px;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+#level1,#level2{
+  position:absolute;
+  left:50%;
+  transform:translate(-50%,0);
+  width: 500px;
+  height:500px;
+
+}
+#level1{
+  padding: 30px 20px 10px 10px;
+
+}
 .hidden{
   display:none;
 }
 #debug{
   background: lightgray;
+  position: absolute;
+  top: 100%;
 }
-#original {
+#scanlevel1,#scanlevel2 { 
   position:relative;
   background: black;
   border: 1px solid black;
@@ -31,29 +80,5 @@
     cursor:pointer;
   }
 }
-.external_link_section {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-}
-a{
-  &:visited {
-      color: black;
-      background-color: transparent;
-      text-decoration: none;
-    }
-    &:link {
-      color: black;
-      background-color: transparent;
-      text-decoration: none;
-    }
-    &:hover {
-      color: grey;
-      background-color: transparent;
-      text-decoration: underline;
-    }
-}
-.fa-github{
-  font-size:36px;
-}
+
   
