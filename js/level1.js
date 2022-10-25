@@ -41,6 +41,7 @@ function answer(e){
         document.getElementById("solution").classList.remove("hidden")
         document.getElementById("wrong").classList.add("hidden")
         document.getElementById("solution").querySelector("span").innerHTML = activeboxes.length / 2;
+        setTimeout(startanimation, 2000);
     }else{
         document.getElementById("wrong").classList.remove("hidden")
     }

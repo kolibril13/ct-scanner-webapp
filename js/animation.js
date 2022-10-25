@@ -44,8 +44,7 @@ function transition(){
         } 
     }, 4000)
 }
-
-document.getElementById("startanimation").addEventListener("click", () => {
+function startanimation(){
     var boxes = document.getElementsByClassName("clickboxcontainer");
 
     //hide question
@@ -61,5 +60,8 @@ document.getElementById("startanimation").addEventListener("click", () => {
         transition();
     }, 4000)
 
-    
+  
+}
+document.getElementById("startanimation").addEventListener("click", () => {
+    startanimation()
 })

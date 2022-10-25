@@ -265,7 +265,7 @@
   color: black;
   font-size: 16px;
   width: 150px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   cursor: pointer;
 }
 #level2 #scanlevel2 {
@@ -589,6 +589,44 @@
           transform: rotate(742.5deg);
 }
 
+#headline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#menubutton {
+  font-size: 35px;
+  cursor: pointer;
+  float: right;
+  padding: 5px 10px;
+}
+
+.menu {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.884);
+  color: white;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+}
+.menu .menuitem {
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.menu .menuitem:hover {
+  text-decoration: underline;
+}
+
 #level1, #level2 {
   position: absolute;
   left: 50%;
@@ -596,7 +634,7 @@
           transform: translate(-50%, 0);
   width: 500px;
   height: 500px;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 #level1 {
@@ -609,6 +647,8 @@
 
 #debug {
   background: lightgray;
+  position: absolute;
+  top: 100%;
 }
 
 #scanlevel1, #scanlevel2 {
@@ -645,30 +685,4 @@
 .answers img {
   max-width: 100px;
   cursor: pointer;
-}
-
-.external_link_section {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-}
-
-a:visited {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:link {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:hover {
-  color: grey;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-.fa-github {
-  font-size: 36px;
 }

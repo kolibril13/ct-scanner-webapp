@@ -4,18 +4,24 @@
   <head>
     <title>CT Scanner</title>
     <link rel="icon" type="image/svg+xml" href="assets/icon_bone.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
-    <div class="external_link_section">
-      <a title="Link zum GitHub Projekt" href="https://github.com/kolibril13/ct-scanner-webapp" target="_blank">
-        <i class="fa fa-github"></i>
-      </a>
+    <div id="headline" >
+      <h2>CT Scanner zum Anfassen</h2>
+      <i id="menubutton" class="fa-solid fa-bars"></i>
     </div>
+    <div id="menu" class="menu hidden">
+      <div id="tolevelone" class="menuitem">Level 1: Diskrete Winkel</div>
+      <div id="toleveltwo" class="menuitem">Level 2: Kontinuierliche Winkel</div>
+      <div id="togithub" class="menuitem" >Zum Github Projekt</div>
+      <div id="startanimation">Start animation</div>
+    </div>
+    
 
     <div id="level1">
       <div id="circlecontainer">
@@ -70,14 +76,11 @@
           </div>
       </div>
     </div>
-    
+   
     
     <div id="debug">
-      <div id="startanimation">Start animation</div>
-      <div class="menu">
-        <div id="tolevelone" class="menuitem">Level 1: Diskrete Winkel</div>
-        <div id="toleveltwo" class="menuitem">Level 2: Kontinuierliche Winkel</div>
-      </div>
+      
+      
       <!-- information useful for debugging -->
       <!-- <p>Grey value of pixel in center: <span id="original_as_text"></span></p>
       <p>Processing took: <span id="duration"></span>ms</p>
