@@ -601,6 +601,10 @@
           align-items: center;
 }
 
+#helpbutton {
+  cursor: pointer;
+}
+
 #menubutton {
   font-size: 35px;
   cursor: pointer;
@@ -608,7 +612,7 @@
   padding: 5px 10px;
 }
 
-.menu {
+.menu, #helpoverlay {
   position: absolute;
   background: rgba(0, 0, 0, 0.884);
   color: white;
@@ -618,12 +622,12 @@
   width: 100%;
   z-index: 99999;
 }
-.menu .menuitem {
+.menu .menuitem, #helpoverlay .menuitem {
   cursor: pointer;
   margin-bottom: 10px;
   font-size: 18px;
 }
-.menu .menuitem:hover {
+.menu .menuitem:hover, #helpoverlay .menuitem:hover {
   text-decoration: underline;
 }
 
@@ -634,7 +638,6 @@
           transform: translate(-50%, 0);
   width: 500px;
   height: 500px;
-  margin-top: 30px;
 }
 
 #level1 {

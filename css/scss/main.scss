@@ -7,13 +7,16 @@
   justify-content: space-between;
   align-items: center;
 }
+#helpbutton{
+  cursor:pointer;
+}
 #menubutton{
   font-size: 35px;
   cursor:pointer;
   float:right;
   padding:5px 10px;
 }
-.menu{
+.menu,#helpoverlay{
   position:absolute;
   background:rgba(0, 0, 0, 0.884);
   color:white;
@@ -37,7 +40,7 @@
   transform:translate(-50%,0);
   width: 500px;
   height:500px;
-  margin-top: 30px;
+
 }
 #level1{
   padding: 30px 20px 10px 10px;

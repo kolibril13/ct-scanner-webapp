@@ -17,9 +17,13 @@ document.getElementById("togithub").addEventListener("click",() => {
 document.getElementById("menubutton").addEventListener("click",() => {
     document.getElementById("menu").classList.remove("hidden")
 })
+document.getElementById("helpbutton").addEventListener("click",() => {
+    document.getElementById("helpoverlay").classList.remove("hidden")
+})
 document.addEventListener("click",(e) => {
-    if(e.target != document.getElementById("menubutton")){
-        document.getElementById("menu").classList.add("hidden")
+    if(e.target != document.getElementById("menubutton") && e.target != document.getElementById("helpbutton")){
+        document.getElementById("menu").classList.add("hidden");
+        document.getElementById("helpoverlay").classList.add("hidden")
     }
     
 })

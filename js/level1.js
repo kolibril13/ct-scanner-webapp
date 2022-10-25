@@ -31,6 +31,7 @@ for(i=0; i<40; i++){
 
 function answer(e){
     var activeboxes = document.querySelectorAll(".clickbox.active");
+    window.scrollTo(0,window.innerHeight);
     if (activeboxes.length < 4){
         document.getElementById("hint").classList.remove("hidden")
         return;

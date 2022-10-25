@@ -84,7 +84,8 @@ function checkarea(){
     var wrong = document.getElementById("wronglvl2")
     var hint = document.getElementById("hintlvl2")
     var solution = document.getElementById("solutionlvl2")
-  
+    console.log(document.getElementById("hintlvl2").scrollHeight)
+    
     //not enough angles
     if(activeboxes.length < 2){
         hint.classList.remove("hidden")
@@ -104,5 +105,6 @@ function checkarea(){
         wrong.classList.remove("hidden")
         solution.classList.add("hidden")
     }
+    window.scrollTo(0,window.innerHeight);
 }
 
