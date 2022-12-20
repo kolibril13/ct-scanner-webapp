@@ -1,0 +1,23 @@
+{
+    "en":{
+        "CT Scanner zum Anfassen": "Touch the CT scanner",
+        "Frage: Welches Objekt verbirgt sich hier?": "Question: What object is hidden here?",
+        "Diskrete Winkel": "Discrete angles",
+        "Kontinuierliche Winkel": "Continuous angles",
+        "Zum Github Projekt": "To the Github project",
+        "Frage: Von welcher Ebene stammt der Scan?": "",
+        "Bereich Prüfen": "Check area",
+        "Was ist der CT Scanner zum Anfassen?": ""
+    },
+    "de":{
+        "CT Scanner zum Anfassen": "CT Scanner zum Anfassen",
+        "Frage: Welches Objekt verbirgt sich hier?": "Frage: Welches Objekt verbirgt sich hier?",
+        "Diskrete Winkel": "Diskrete Winkel",
+        "Kontinuierliche Winkel": "Kontinuierliche Winkel",
+        "Zum Github Projekt": "Zum Github Projekt",
+        "Frage: Von welcher Ebene stammt der Scan?": "Frage: Von welcher Ebene stammt der Scan?",
+        "Bereich Prüfen": "Bereich Prüfen",
+        "Was ist der CT Scanner zum Anfassen?": "Was ist der CT Scanner zum Anfassen?"
+
+    }
+}

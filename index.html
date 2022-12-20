@@ -77,10 +77,11 @@
           <div id="circle">
             <div class="halfone"></div>
             <div class="halftwo"></div>
+            <div id="lockanswer" onclick="checkarea()"><i class="fa-sharp fa-solid fa-magnifying-glass fa-xs"></i></div>
           </div>
         </div>
         <input type="range" min="1" max="1734" value="860" class="slider" id="scanposition">
-        <div id="lockanswer" onclick="checkarea()">Bereich prüfen</div>
+        
           <div id="solutionlvl2" class="hint hidden">
             <p>Super! Du hast die richtige Stelle mit nur <span>x</span> Winkeln gefunden!</p>
           </div>
@@ -90,10 +91,9 @@
           <div id="hintlvl2" class="hint hidden">
             <p>Achtung: Wähle mindestens 2 Winkel aus, bevor du das Quizz beantwortest.</p>
           </div>
-      </div>
+
     </div>
    
-    
     <div id="debug">
       
       
@@ -111,4 +111,5 @@
   <script src="js/level1.js"></script>
   <script src="js/level2.js"></script>
   <script src="js/animation.js"></script>
+  <script src="js/parse.js"></script>
 </html>

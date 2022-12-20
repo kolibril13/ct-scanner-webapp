@@ -104,7 +104,7 @@ function checkarea(){
         solution.classList.add("hidden")
     }
     //solution right
-    else if(document.getElementById("scanposition").value < 780 && document.getElementById("scanposition").value > 680){
+    else if(document.getElementById("scanposition").value < 830 && document.getElementById("scanposition").value > 630){
         hint.classList.add("hidden")
         wrong.classList.add("hidden")
         solution.classList.remove("hidden")

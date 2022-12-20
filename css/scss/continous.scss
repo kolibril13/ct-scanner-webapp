@@ -49,8 +49,18 @@
             .halftwo{
                 transform: rotate(-90deg) rotate3d(1,0,0,-13deg); 
                 z-index: 50;
-               
-                
+            }
+            #lockanswer{
+                position: absolute;
+                border:2px solid black;
+                width: 20px;
+                height: 20px;
+                background: rgb(48, 220, 243);
+                border-radius: 100%;
+                left: 106px;
+                top:-65px;
+                cursor:pointer;
+                z-index: 101;
             }
         }
         
@@ -61,6 +71,7 @@
         width: 400px;
     }
     
+    /*
     #lockanswer{
         padding:10px;
         background: rgb(48, 220, 243);
@@ -70,8 +81,9 @@
         width: 150px;
         margin:0 auto 20px;
         cursor:pointer;
+        position:relative;
     }
-
+    */
 
 
     #scanlevel2{
