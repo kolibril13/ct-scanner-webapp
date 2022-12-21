@@ -202,6 +202,21 @@
           transform: rotate(261deg);
 }
 
+#level2 {
+  /*
+  #lockanswer{
+      padding:10px;
+      background: rgb(48, 220, 243);
+      border:1px solid rgb(87, 87, 87);
+      color: black;
+      font-size:16px;
+      width: 150px;
+      margin:0 auto 20px;
+      cursor:pointer;
+      position:relative;
+  }
+  */
+}
 #level2 #canvascontainer {
   position: relative;
   height: 500px;
@@ -253,20 +268,22 @@
           transform: rotate(-90deg) rotate3d(1, 0, 0, -13deg);
   z-index: 50;
 }
+#level2 #scanarea #circle #lockanswer {
+  position: absolute;
+  border: 2px solid black;
+  width: 20px;
+  height: 20px;
+  background: rgb(48, 220, 243);
+  border-radius: 100%;
+  left: 106px;
+  top: -65px;
+  cursor: pointer;
+  z-index: 101;
+}
 #level2 #scanposition {
   margin-top: 20px;
   margin-bottom: 20px;
   width: 400px;
-}
-#level2 #lockanswer {
-  padding: 10px;
-  background: rgb(48, 220, 243);
-  border: 1px solid rgb(87, 87, 87);
-  color: black;
-  font-size: 16px;
-  width: 150px;
-  margin: 0 auto 20px;
-  cursor: pointer;
 }
 #level2 #scanlevel2 {
   top: calc(50% - 5px) !important;

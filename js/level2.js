@@ -35,33 +35,44 @@ for(i=0; i<40;i++){
 
     //clickevent
     circlepart.addEventListener("click", (e) => {
-        //find opposite part to mark
-        var oppositeid = (parseInt(e.target.id.substring(10, e.target.id.length)) + 20) % 40;
-        var oppositecirclepart = document.getElementById("circlepart"+oppositeid) 
+        
+        clickeventfun(e)
+    })
 
-        //set color
-        if(e.target.getAttribute("fill") != "rgb(173, 33, 185)"){
-            e.target.setAttributeNS(null, "fill","rgb(173, 33, 185)");
-            e.target.classList.add("active");
-            oppositecirclepart.setAttributeNS(null, "fill","rgb(173, 33, 185)");            
-        }else{
-            e.target.setAttributeNS(null, "fill","rgb(48, 220, 243)");
-            e.target.classList.remove("active");
-            oppositecirclepart.setAttributeNS(null, "fill","rgb(48, 220, 243)"); 
+    circlepart.addEventListener("mouseenter", (e) => {
+        if (trigger === true){
+            clickeventfun(e)
         }
-
-        //add/remove image
-        var picturetoadd = Math.abs(parseInt(e.target.id.substring(10, e.target.id.length)))
-        createprojectionimg(
-            "scanlevel2",
-            picturetoadd,
-            e.target.getAttribute("fill") != "rgb(173, 33, 185)", 
-            shownprojectionslvl2, 
-            preparedprojectionslvl2
-        );
     })
 
     g.appendChild(circlepart)
+}
+
+function clickeventfun(e){
+    //find opposite part to mark
+    var oppositeid = (parseInt(e.target.id.substring(10, e.target.id.length)) + 20) % 40;
+    var oppositecirclepart = document.getElementById("circlepart"+oppositeid) 
+
+    //set color
+    if(e.target.getAttribute("fill") != "rgb(173, 33, 185)"){
+        e.target.setAttributeNS(null, "fill","rgb(173, 33, 185)");
+        e.target.classList.add("active");
+        oppositecirclepart.setAttributeNS(null, "fill","rgb(173, 33, 185)");            
+    }else{
+        e.target.setAttributeNS(null, "fill","rgb(48, 220, 243)");
+        e.target.classList.remove("active");
+        oppositecirclepart.setAttributeNS(null, "fill","rgb(48, 220, 243)"); 
+    }
+
+    //add/remove image
+    var picturetoadd = Math.abs(parseInt(e.target.id.substring(10, e.target.id.length)))
+    createprojectionimg(
+        "scanlevel2",
+        picturetoadd,
+        e.target.getAttribute("fill") != "rgb(173, 33, 185)", 
+        shownprojectionslvl2, 
+        preparedprojectionslvl2
+    );
 }
 
 //slider and circle
@@ -93,7 +104,7 @@ function checkarea(){
         solution.classList.add("hidden")
     }
     //solution right
-    else if(document.getElementById("scanposition").value < 780 && document.getElementById("scanposition").value > 680){
+    else if(document.getElementById("scanposition").value < 830 && document.getElementById("scanposition").value > 630){
         hint.classList.add("hidden")
         wrong.classList.add("hidden")
         solution.classList.remove("hidden")
@@ -108,3 +119,10 @@ function checkarea(){
     window.scrollTo(0,window.innerHeight);
 }
 
+document.addEventListener('mousedown', function(){
+    trigger = true;
+});
+
+document.addEventListener('mouseup', function(){
+    trigger = false;
+});
