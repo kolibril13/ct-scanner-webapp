@@ -1,3 +1,23 @@
+document.getElementById("circlecontainer").addEventListener('touchmove', function(e){
+    e.preventDefault();
+});
+
+document.getElementById("circlecontainer").addEventListener('mousedown', function(e){
+    trigger = true;
+});
+
+document.getElementById("circlecontainer").addEventListener('touchstart', function(e){
+    trigger = true;
+});
+
+document.getElementById("circlecontainer").addEventListener('mouseup', function(e){
+    trigger = false;
+});
+
+document.getElementById("circlecontainer").addEventListener('touchend', function(e){
+    trigger = false;
+});
+
 // Trigger for Drag & select
 let trigger = false;
 
@@ -16,18 +36,18 @@ for(i=0; i<40; i++){
     clickboxcontainer.appendChild(clickbox);
     circlecontainer.appendChild(clickboxcontainer);
     clickbox.addEventListener("click",(e) => {
-        
-        selectbox(e)
-        
+        selectbox(e) 
     })
+
     // Drag & select
     clickbox.addEventListener("mouseenter",(e)=>{
-
+        
         if (trigger === true){
            selectbox(e)
         }
-
     })
+
+    
 }
 
 function selectbox(e){
@@ -63,10 +83,4 @@ function answer(e){
     }
 }
 
-document.addEventListener('mousedown', function(){
-    trigger = true;
-});
 
-document.addEventListener('mouseup', function(){
-    trigger = false;
-});

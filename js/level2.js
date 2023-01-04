@@ -1,3 +1,26 @@
+//event listeners for drag and activate
+document.getElementById("canvascontainer").addEventListener('touchmove', function(e){
+    e.preventDefault();
+});
+
+document.getElementById("canvascontainer").addEventListener('mousedown', function(e){
+    trigger = true;
+});
+
+document.getElementById("canvascontainer").addEventListener('touchstart', function(e){
+    trigger = true;
+});
+
+document.getElementById("canvascontainer").addEventListener('mouseup', function(e){
+    trigger = false;
+});
+
+document.getElementById("canvascontainer").addEventListener('touchend', function(e){
+    trigger = false;
+});
+
+
+
 //lists
 var shownprojectionslvl2 = [];
 var preparedprojectionslvl2 = prepareProjections("ct_slice_730_upper_legs_continuous.json");
@@ -39,11 +62,6 @@ for(i=0; i<40;i++){
         clickeventfun(e)
     })
 
-    circlepart.addEventListener("mouseenter", (e) => {
-        if (trigger === true){
-            clickeventfun(e)
-        }
-    })
 
     g.appendChild(circlepart)
 }
@@ -119,55 +137,3 @@ function checkarea(){
     window.scrollTo(0,window.innerHeight);
 }
 
-//event listeners for drag and activate
-document.getElementById("circlecontainer").addEventListener('mousedown', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    trigger = true;
-});
-
-document.getElementById("circlecontainer").addEventListener('touchmove', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    trigger = true;
-});
-
-document.getElementById("circlecontainer").addEventListener('touchstart', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    trigger = true;
-});
-
-document.getElementById("circlecontainer").addEventListener('mouseup', function(e){
-    trigger = false;
-});
-
-document.getElementById("circlecontainer").addEventListener('touchend', function(e){
-    trigger = false;
-});
-
-document.getElementById("canvascontainer").addEventListener('mousedown', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    trigger = true;
-});
-
-document.getElementById("canvascontainer").addEventListener('touchmove', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    trigger = true;
-});
-
-document.getElementById("canvascontainer").addEventListener('touchstart', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    trigger = true;
-});
-
-document.getElementById("canvascontainer").addEventListener('mouseup', function(e){
-    trigger = false;
-});
-
-document.getElementById("canvascontainer").addEventListener('touchend', function(e){
-    trigger = false;
-});
