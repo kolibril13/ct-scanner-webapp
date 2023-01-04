@@ -126,6 +126,12 @@ document.getElementById("circlecontainer").addEventListener('mousedown', functio
     trigger = true;
 });
 
+document.getElementById("circlecontainer").addEventListener('touchmove', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    
+});
+
 document.getElementById("circlecontainer").addEventListener('touchstart', function(e){
     e.preventDefault();
     e.stopPropagation();
@@ -144,6 +150,12 @@ document.getElementById("canvascontainer").addEventListener('mousedown', functio
     e.preventDefault();
     e.stopPropagation();
     trigger = true;
+});
+
+document.getElementById("canvascontainer").addEventListener('touchmove', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+ 
 });
 
 document.getElementById("canvascontainer").addEventListener('touchstart', function(e){
