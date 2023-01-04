@@ -129,7 +129,7 @@ document.getElementById("circlecontainer").addEventListener('mousedown', functio
 document.getElementById("circlecontainer").addEventListener('touchmove', function(e){
     e.preventDefault();
     e.stopPropagation();
-    
+    trigger = true;
 });
 
 document.getElementById("circlecontainer").addEventListener('touchstart', function(e){
@@ -155,7 +155,7 @@ document.getElementById("canvascontainer").addEventListener('mousedown', functio
 document.getElementById("canvascontainer").addEventListener('touchmove', function(e){
     e.preventDefault();
     e.stopPropagation();
- 
+    trigger = true;
 });
 
 document.getElementById("canvascontainer").addEventListener('touchstart', function(e){
