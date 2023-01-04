@@ -23,14 +23,17 @@ function transition(){
     }
     
     //transition to level2
-    document.getElementById("level2").classList.add("show");
-    document.getElementById("level2").classList.remove("hidden");
+    setTimeout(() =>{
+        document.getElementById("level2").classList.add("show");
+        document.getElementById("level2").classList.remove("hidden");
+    }, 1000)
+    
     document.getElementById("level1").classList.add("hide");
 
     setTimeout(() =>{
         document.getElementById("level1").classList.add("hidden")
         document.getElementById("level1").classList.remove("hide");
-        document.getElementById("level2").classList.remove("show");
+        setdocument.getElementById("level2").classList.remove("show");
         
         //reset lvl 1
         for(i=0; i < boxes.length; i++){
@@ -42,7 +45,7 @@ function transition(){
                 boxes[i].classList.remove("flowin")
             }
         } 
-    }, 4000)
+    }, 3000)
 }
 function startanimation(){
     var boxes = document.getElementsByClassName("clickboxcontainer");
@@ -58,7 +61,8 @@ function startanimation(){
     setTimeout(() =>{
         addmoreboxes();
         transition();
-    }, 4000)
+        document.getElementById("levelheading").innerHTML = "Level 2"
+    }, 3000)
 
   
 }
