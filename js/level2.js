@@ -119,12 +119,12 @@ function checkarea(){
     window.scrollTo(0,window.innerHeight);
 }
 
-document.getElementById("canvascontainer").addEventListener('mousedown', function(e){
+document.getElementById("canvascontainer").addEventListener('mousedown touchstart', function(e){
     e.preventDefault();
     e.stopPropagation();
     trigger = true;
 });
 
-document.getElementById("canvascontainer").addEventListener('mouseup', function(e){
+document.getElementById("canvascontainer").addEventListener('mouseup touchend', function(e){
     trigger = false;
 });
