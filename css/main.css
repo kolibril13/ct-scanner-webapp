@@ -22,6 +22,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-touch-action: none;
+      touch-action: none;
   pointer-events: none;
 }
 #level1 #circlecontainer .clickboxcontainer .clickbox {
@@ -33,6 +35,8 @@
   cursor: pointer;
   z-index: 100;
   pointer-events: auto;
+  -ms-touch-action: auto;
+      touch-action: auto;
 }
 #level1 #circlecontainer .clickboxcontainer .clickbox.active {
   background: rgb(173, 33, 185);
@@ -604,6 +608,12 @@
 .clickboxcontainer:nth-child(82) {
   -webkit-transform: rotate(742.5deg);
           transform: rotate(742.5deg);
+}
+
+body {
+  position: absolute;
+  width: calc(100vw - 20px);
+  margin: 10px;
 }
 
 #headline {

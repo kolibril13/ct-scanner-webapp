@@ -1,7 +1,11 @@
 @import "discrete.scss";
 @import "continous.scss";
 @import "animation.scss";
-
+body{
+  position: absolute;
+  width: Calc(100vw - 20px);
+  margin: 10px;
+}
 #headline{
   display:flex;
   justify-content: space-between;
