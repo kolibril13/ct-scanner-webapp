@@ -37,10 +37,9 @@
 #level1,#level2{
   position:absolute;
   left:50%;
-  transform:translate(-50%,0);
-  width: 500px;
-  height:500px;
-
+  transform:translate(-50%,0); 
+  max-width: 500px;
+ 
 }
 #level1{
   padding: 30px 20px 10px 10px;

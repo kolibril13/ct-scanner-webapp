@@ -353,15 +353,15 @@
 .show {
   -webkit-animation-name: show;
           animation-name: show;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 
 .hide {
   -webkit-animation-name: hide;
           animation-name: hide;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -369,8 +369,8 @@
 .flowout {
   -webkit-animation-name: flowout;
           animation-name: flowout;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -653,8 +653,7 @@
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  width: 500px;
-  height: 500px;
+  max-width: 500px;
 }
 
 #level1 {

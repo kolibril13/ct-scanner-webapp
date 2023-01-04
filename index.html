@@ -12,7 +12,10 @@
 
   <body>
     <div id="headline" >
-      <h2> CT Scanner zum Anfassen <i id="helpbutton" class="fa-regular fa-circle-question"></i></h2>
+      <div class="heading">
+        <h2 class="mainheading">CT Scanner zum Anfassen <i id="helpbutton" class="fa-regular fa-circle-question"></i></h2>
+        <h3 id="levelheading">Level 1</h3>
+      </div>
       <i id="menubutton" class="fa-solid fa-bars"></i>
     </div>
     <div id="menu" class="menu hidden">
@@ -40,6 +43,7 @@
     </div>
 
     <div id="level1">
+      
       <div id="circlecontainer">
         <canvas id="scanlevel1" width="360" height="360"></canvas>
       </div>
@@ -63,6 +67,7 @@
     </div>
 
     <div id="level2" class="hidden">
+      
       <div id="canvascontainer">
         <svg id="outercircle" width="520" height="520" viewbox="0 0 530 530" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <g id="circles" transform="translate(20,20) rotate(-9 240 240)" stroke="#000" stroke-width="2"></g>
