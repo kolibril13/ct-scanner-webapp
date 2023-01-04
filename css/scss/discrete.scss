@@ -15,9 +15,9 @@ $widget-diameter: 420px;
             height:$widget-diameter;
             display:flex;
             justify-content: center;
-        
+            touch-action: none;
             pointer-events:none;
-            .clickbox{
+            .clickbox{ 
                 position:absolute;
                 width:20px;
                 height:20px;
@@ -26,7 +26,7 @@ $widget-diameter: 420px;
                 cursor: pointer;
                 z-index:100;
                 pointer-events: auto;
-                
+                touch-action: auto;
                 &.active{
                     background:rgb(173, 33, 185);
                 }
