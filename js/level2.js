@@ -119,12 +119,43 @@ function checkarea(){
     window.scrollTo(0,window.innerHeight);
 }
 
-document.getElementById("canvascontainer").addEventListener('mousedown touchstart', function(e){
+//event listeners for drag and activate
+document.getElementById("circlecontainer").addEventListener('mousedown', function(e){
     e.preventDefault();
     e.stopPropagation();
     trigger = true;
 });
 
-document.getElementById("canvascontainer").addEventListener('mouseup touchend', function(e){
+document.getElementById("circlecontainer").addEventListener('touchstart', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    trigger = true;
+});
+
+document.getElementById("circlecontainer").addEventListener('mouseup', function(e){
+    trigger = false;
+});
+
+document.getElementById("circlecontainer").addEventListener('touchend', function(e){
+    trigger = false;
+});
+
+document.getElementById("canvascontainer").addEventListener('mousedown', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    trigger = true;
+});
+
+document.getElementById("canvascontainer").addEventListener('touchstart', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    trigger = true;
+});
+
+document.getElementById("canvascontainer").addEventListener('mouseup', function(e){
+    trigger = false;
+});
+
+document.getElementById("canvascontainer").addEventListener('touchend', function(e){
     trigger = false;
 });
