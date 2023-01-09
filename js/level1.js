@@ -1,25 +1,41 @@
-document.getElementById("circlecontainer").addEventListener('touchmove', function(e){
-    e.preventDefault();
-});
-
-document.getElementById("circlecontainer").addEventListener('mousedown', function(e){
-    trigger = true;
-});
-
-document.getElementById("circlecontainer").addEventListener('touchstart', function(e){
-    trigger = true;
-});
-
-document.getElementById("circlecontainer").addEventListener('mouseup', function(e){
-    trigger = false;
-});
-
-document.getElementById("circlecontainer").addEventListener('touchend', function(e){
-    trigger = false;
-});
 
 // Trigger for Drag & select
 let trigger = false;
+//target for touchmove
+let target = "";
+
+document.addEventListener('mousedown', function(e){
+    trigger = true;
+    console.log("mousedown")
+});
+
+document.addEventListener('touchstart', function(e){
+    trigger = true;
+});
+
+document.getElementById("circlecontainer").addEventListener("touchmove",(e)=>{
+    if (trigger === true){
+        var touch = e.touches[0] || e.changedTouches[0];
+        x = touch.pageX;
+        y = touch.pageY;
+        if(!target){
+            target = document.elementFromPoint(x, y);
+        }else if(target != document.elementFromPoint(x, y) && document.elementFromPoint(x, y).classList.contains("clickbox")){
+            target = document.elementFromPoint(x, y);
+            selectbox(e,target)
+        }  
+    }
+})
+
+document.addEventListener('mouseup', function(e){
+    trigger = false;
+});
+
+document.addEventListener('touchend', function(e){
+    trigger = false;
+    target = "";
+});
+
 
 //lists
 var shownprojectionslvl1 = [];
@@ -35,34 +51,41 @@ for(i=0; i<40; i++){
     clickbox.id = i;
     clickboxcontainer.appendChild(clickbox);
     circlecontainer.appendChild(clickboxcontainer);
+
     clickbox.addEventListener("click",(e) => {
         selectbox(e) 
     })
-
+   
     // Drag & select
-    clickbox.addEventListener("mouseenter",(e)=>{
-        
+    clickbox.addEventListener("mouseover",(e)=>{
         if (trigger === true){
            selectbox(e)
         }
-    })
-
-    
+    }) 
 }
 
-function selectbox(e){
-    var picturetoadd = Math.abs(parseInt(e.target.id))
+function selectbox(e,box){
+    if(!box){
+        var boxtarget = e.target;
+    }else{
+        var boxtarget = box;
+    }
+
+    var picturetoadd = Math.abs(parseInt(boxtarget.id))
     createprojectionimg(
         "scanlevel1",
         picturetoadd,
-        e.target.classList.contains("active"), 
+        boxtarget.classList.contains("active"), 
         shownprojectionslvl1, 
         preparedprojectionslvl1
     );
-    e.target.classList.toggle("active")
-    var oppositeid = (parseInt(e.target.id) + 20) % 40
+    boxtarget.classList.toggle("active")
+    var oppositeid = (parseInt(boxtarget.id) + 20) % 40
     document.getElementById(oppositeid).classList.toggle("active")
+ 
 }
+
+
 
 function answer(e){
     var activeboxes = document.querySelectorAll(".clickbox.active");
