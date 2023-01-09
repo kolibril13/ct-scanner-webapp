@@ -1,22 +1,42 @@
 //event listeners for drag and activate
-document.getElementById("canvascontainer").addEventListener('touchmove', function(e){
+//target for touchmove
+if(!target){
+    let target = "";
+}
+
+document.addEventListener('mousedown', function(e){
+    trigger = true;
+    console.log("mousedown")
+});
+
+document.addEventListener('touchstart', function(e){
+    trigger = true;
+});
+
+document.getElementById("outercircle").addEventListener("touchmove",(e)=>{
+    e.stopPropagation();
     e.preventDefault();
-});
+    if (trigger === true){
+       
+        var touch = e.touches[0] || e.changedTouches[0];
+        x = touch.pageX;
+        y = touch.pageY;
+        if(!target){
+            target = document.elementFromPoint(x, y);
+        }else if(target != document.elementFromPoint(x, y) && document.elementFromPoint(x, y).classList.contains("circlepart")){
+            target = document.elementFromPoint(x, y);
+            clickeventfun(e,target)
+        }  
+    }
+})
 
-document.getElementById("canvascontainer").addEventListener('mousedown', function(e){
-    trigger = true;
-});
-
-document.getElementById("canvascontainer").addEventListener('touchstart', function(e){
-    trigger = true;
-});
-
-document.getElementById("canvascontainer").addEventListener('mouseup', function(e){
+document.addEventListener('mouseup', function(e){
     trigger = false;
 });
 
-document.getElementById("canvascontainer").addEventListener('touchend', function(e){
+document.addEventListener('touchend', function(e){
     trigger = false;
+    target = "";
 });
 
 
@@ -66,31 +86,37 @@ for(i=0; i<40;i++){
     g.appendChild(circlepart)
 }
 
-function clickeventfun(e){
+function clickeventfun(e,box){
+    if(!box){
+        var boxtarget = e.target;
+    }else{
+        var boxtarget = box;
+    }
     //find opposite part to mark
-    var oppositeid = (parseInt(e.target.id.substring(10, e.target.id.length)) + 20) % 40;
+    var oppositeid = (parseInt(boxtarget.id.substring(10, boxtarget.id.length)) + 20) % 40;
     var oppositecirclepart = document.getElementById("circlepart"+oppositeid) 
 
     //set color
-    if(e.target.getAttribute("fill") != "rgb(173, 33, 185)"){
-        e.target.setAttributeNS(null, "fill","rgb(173, 33, 185)");
-        e.target.classList.add("active");
+    if(boxtarget.getAttribute("fill") != "rgb(173, 33, 185)"){
+        boxtarget.setAttributeNS(null, "fill","rgb(173, 33, 185)");
+        boxtarget.classList.add("active");
         oppositecirclepart.setAttributeNS(null, "fill","rgb(173, 33, 185)");            
     }else{
-        e.target.setAttributeNS(null, "fill","rgb(48, 220, 243)");
-        e.target.classList.remove("active");
+        boxtarget.setAttributeNS(null, "fill","rgb(48, 220, 243)");
+        boxtarget.classList.remove("active");
         oppositecirclepart.setAttributeNS(null, "fill","rgb(48, 220, 243)"); 
     }
 
     //add/remove image
-    var picturetoadd = Math.abs(parseInt(e.target.id.substring(10, e.target.id.length)))
+    var picturetoadd = Math.abs(parseInt(boxtarget.id.substring(10, boxtarget.id.length)))
     createprojectionimg(
         "scanlevel2",
         picturetoadd,
-        e.target.getAttribute("fill") != "rgb(173, 33, 185)", 
+        boxtarget.getAttribute("fill") != "rgb(173, 33, 185)", 
         shownprojectionslvl2, 
         preparedprojectionslvl2
     );
+  
 }
 
 //slider and circle
